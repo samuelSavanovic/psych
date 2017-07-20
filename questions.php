@@ -29,11 +29,11 @@ function process($questions = array()) {
     foreach ($questions as $k => $v) {
         array_push($ret,'', $v, ' <br> 
                 <input type="radio" value="1" 
-                    name="\',$k,\'" checked>Yes
+                    name='. $k .'>Yes
                 <input type="radio" value="0" 
-                    name="\',$k,\'">No <br>
+                    name='. $k .'>No <br>
             ');
         array_push($order, $k);
     }
-    return join($ret);
+    return $ret;
 }

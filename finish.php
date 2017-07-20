@@ -1,14 +1,13 @@
 <?php
 require_once 'db/database_connect.php';
 $db_connection = db_connect();
+
 if (isset($_POST['questionnaire_submit'])) {
     $order = $_POST['ordering'];
-    $Question_1 = $_POST[$order[0]];
-    $Question_2 = $_POST[$order[1]];
+
     $Question_3 = $_POST[$order[2]];
-    $statement = $db_connection->prepare("update questions set Question_1 = ?, 
-                            Question_2 = ?, Question_3 = ?, Ordering = ? where ID = ?");
-    $statement->execute(array($Question_1, $Question_2, $Question_3, $order, $_POST['id']));
+    $statement = $db_connection->prepare("update questions set Question_3 = ?, Ordering = ? where ID = ?");
+    $statement->execute(array($Question_3, $order, $_POST['id']));
     echo '
         <!DOCTYPE html>
         <html>
