@@ -180,7 +180,7 @@ if(isset ($_POST['question_2']) ) {
                 <div class="row">
                     <form method="post" action="finish.php" target="_top">
                         <div class="questions">',$all_questions[2],'</div>
-                        <input type="submit" name="questionnaire_submit" value="Done" style="float: right;">
+                        <input type="submit" name="questionnaire_submit" value="Next" style="float: right;">
                         <br>
                         <input type="hidden" name="id" value="',$id[0],'">
                         <input type="hidden" name="ordering" value='. $_POST['ordering'] .'>
