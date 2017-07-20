@@ -1,0 +1,21 @@
+html,body {
+    padding:0;
+    margin:0;
+    height:100%;
+}
+.heading {
+    text-align: left;
+}
+.center {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 15%;
+}
+.row {
+    height:50%;
+}
+
+.questions {
+    margin-top: 2%;
+    margin-left: 20px;
+}
