@@ -122,7 +122,9 @@ if (isset($_POST['confirm_delete_null_rows'])) {
 
 
 echo '
+    <input type="radio" name="foo" value="1"> aaa
         </div>
     </body>
     </html>
 ';
+print_r($_POST);

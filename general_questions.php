@@ -26,7 +26,7 @@ function general_questions() {
                     <option name = "gender" value="1">female</option>
                     <option name = "gender" value="2">other</option>
                     </select></p>
-                    <input type="submit" style="float: right;" class="button" name="general_questions_submit" value="Next">
+                    <input onclick="window.onbeforeunload=undefined;" type="submit" style="float: right;" class="button" name="general_questions_submit" value="Next">
                     </form>
             </div>
        

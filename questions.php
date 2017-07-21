@@ -23,15 +23,16 @@ function get_index($questions, $ordering) {
         }
     }
 }
+
 function process($questions = array()) {
     global $order;
     $ret = array();
     foreach ($questions as $k => $v) {
         array_push($ret,'', $v, ' <br> 
-                <input type="radio" value="1" 
-                    name='. $k .'>Yes
-                <input type="radio" value="0" 
-                    name='. $k .'>No <br>
+                <input id="question_radio" type="radio" value="1" 
+                    name='. $k .' onclick="getElementById(\'question_button\').disabled = false;">Yes
+                <input id="question_radio" type="radio" value="0" 
+                    name='. $k .' onclick="getElementById(\'question_button\').disabled = false;">No <br>
             ');
         array_push($order, $k);
     }
