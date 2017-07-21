@@ -14,7 +14,6 @@ function update_order($order) {
                 $order[$i] = 'C';
                 break;
         }
-
     }
     return $order;
 }

@@ -55,7 +55,6 @@ if (!isset($_POST['preview_delete_null_rows'])){
 
 
 if(isset($_POST['export_to_csv'])) {
-
     header("location: download_csv.php");
     unset($_POST['export_to_csv']);
 }
