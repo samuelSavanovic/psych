@@ -16,7 +16,7 @@ echo '<script type="text/javascript">window.onbeforeunload = function (e) {
   return \'Are you sure?\';
 };
 </script>';
-
+echo '<noscript> <META HTTP-EQUIV="Refresh" CONTENT="0;URL=error_page.html"></noscript>';
 function exec_sql($db_connection, $sql) {
     $statement = $db_connection->prepare($sql);
     $statement->execute();
