@@ -21,7 +21,7 @@ header('Content-Type: text/csv');
 header('Content-Disposition: attachment;filename=data.csv');
 
 
-$sql = "SELECT * FROM questions;";
+$sql = "SELECT * FROM questions ORDER BY ID;";
 
 $STH = $db_connection->prepare($sql);
 $STH->execute();

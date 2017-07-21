@@ -4,7 +4,7 @@ $db_connection = db_connect();
 
 
 if (!isset($_POST['preview_delete_null_rows'])){
-    $statement = $db_connection->prepare("SELECT * FROM questions;");
+    $statement = $db_connection->prepare("SELECT * FROM questions ORDER BY ID;");
     $statement->execute();
     $db_data = $statement->fetchAll();
 
@@ -51,8 +51,6 @@ if (!isset($_POST['preview_delete_null_rows'])){
           </form>';
 
 }
-
-
 
 if(isset($_POST['export_to_csv'])) {
     header("location: download_csv.php");
