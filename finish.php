@@ -7,6 +7,7 @@ if (isset($_POST['questionnaire_submit'])) {
 
     $Question_3 = $_POST[$order[2]];
     $statement = $db_connection->prepare("update questions set Question_3 = ?, Ordering = ? where ID = ?");
+
     $statement->execute(array($Question_3, $order, $_POST['id']));
     echo '
         <!DOCTYPE html>
