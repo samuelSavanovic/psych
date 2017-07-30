@@ -63,6 +63,7 @@ function get_all_questions() {
         }
     }
     $qsts = process(permutations($questions)[$permutation_number]);
+    $db_connection = null;
     return array($qsts[1] . $qsts[2], $qsts[4] . $qsts[5] , $qsts[7] . $qsts[8]);
 }
 

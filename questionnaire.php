@@ -4,7 +4,7 @@ require_once ('db/database_connect.php');
 require_once ('questions.php');
 require_once ('util.php');
 session_start();
-$db_connection = db_connect();
+
 
 global $questions;
 
