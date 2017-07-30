@@ -34,5 +34,3 @@ function general_questions() {
     </html>
     ';
 }
-
-

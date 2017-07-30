@@ -7,6 +7,9 @@ if (!isset($_POST['preview_delete_null_rows'])){
     $statement = $db_connection->prepare("SELECT * FROM questions ORDER BY ID;");
     $statement->execute();
     $db_data = $statement->fetchAll();
+    $statement = $db_connection->prepare("SELECT COUNT(*) FROM questions ORDER BY ID;");
+    $statement->execute();
+    $count = $statement->fetchAll();
 
     echo '
         <DOCTYPE! HTML>
@@ -18,6 +21,7 @@ if (!isset($_POST['preview_delete_null_rows'])){
         </head>
         <body>
             <div class="center">
+                <h3>COUNT: '. $count[0][0] .'</h3>
                 <table>
                 <tr>
                 <th>ID</th>
@@ -47,15 +51,15 @@ if (!isset($_POST['preview_delete_null_rows'])){
             <input type="submit" name="preview_delete_null_rows" value="Delete Null Rows">  
           </form>';
     echo '<form method="post"> 
-            <input type="submit" name="export_to_csv" value="Export to CSV">
+            <input type="submit" name="export_to_csv" onclick="window.open(\'http://qc-research.science/download_csv.php\')" value="Export to CSV">
           </form>';
 
 }
-
+/*
 if(isset($_POST['export_to_csv'])) {
-    header("location: download_csv.php");
+    header("location: http://qc-research.science/download_csv.php");
     unset($_POST['export_to_csv']);
-}
+}*/
 
 if (isset($_POST['preview_delete_null_rows']) &&!isset($_POST['confirm_delete_null_rows'])) {
     $preview_null_rows = 'SELECT * FROM questions WHERE (Question_1 IS NULL)
